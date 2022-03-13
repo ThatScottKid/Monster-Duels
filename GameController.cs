@@ -65,21 +65,21 @@ public class GameController : MonoBehaviour
     {
         if (playerLTurn == true)
         {
-            PerformMove(heroL, heroR, heroL.moves[selection]);      //Player L turn
-            heroL.Health.value -= heroL.Curse.value;
-            if (heroL.Health.value <= 0f)
-            {
-                GameOver();
-            }
-        }
-        else
-        {
-            PerformMove(heroR, heroL, heroR.moves[selection]);      //Player R turn
-            heroR.Health.value -= heroR.Curse.value;
             if (heroR.Health.value <= 0f)
             {
                 GameOver();
             }
+            PerformMove(heroL, heroR, heroL.moves[selection]);      //Player L turn
+            heroL.Health.value -= heroL.Curse.value;
+        }
+        else
+        {
+            if (heroL.Health.value <= 0f)
+            {
+                GameOver();
+            }
+            PerformMove(heroR, heroL, heroR.moves[selection]);      //Player R turn
+            heroR.Health.value -= heroR.Curse.value;
         }
     }
 
