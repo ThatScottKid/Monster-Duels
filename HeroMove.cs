@@ -6,18 +6,22 @@ using UnityEngine;
 [CreateAssetMenu]
 public class HeroMove : ScriptableObject
 {
-    public enum Type
+    public enum Category
     {
-        OnSelf,
         OnTarget,
+        OnSelf,
     }
 
-    public Type MoveType;
+    public Category MoveType;
     public string MoveName;
     public float damage;
     public float healing;
     public float strength;
     public float fortitude;
-    public float quantity = 1;
+    public float curse;
+    public bool DrainHP;
+   
+    public float moveQuantity = 1;
 
+    public string description;
 }
